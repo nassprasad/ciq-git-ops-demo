@@ -1,5 +1,5 @@
 About this Project:
-Contributing GitOps Project - By Siva Prasad Nagireddy, thanks 
+Contributing GitOps Project - By Siva Prasad Nagireddy.
 
 git-ops-demo/
 │
