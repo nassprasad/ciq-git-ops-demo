@@ -54,6 +54,6 @@ jobs:
         run: terraform plan
 
       # Terraform Apply
-      #- name: Terraform Apply
-      #  run: terraform apply 
+      - name: Terraform Apply
+        run: terraform apply 
 
