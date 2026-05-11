@@ -22,8 +22,6 @@ module "vpc" {
   azs      = var.azs
 }
 
-# test trigger
-
 /*
 # 🖥️ EC2 Module
 module "ec2" {
