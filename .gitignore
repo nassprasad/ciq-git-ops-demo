@@ -1,0 +1,152 @@
+# =========================
+# Terraform
+# =========================
+.terraform/
+*.tfstate
+*.tfstate.*
+!*.tfvars.example
+crash.log
+crash.*.log
+
+# Terraform CLI
+terraform.tfstate.backup
+
+# Local terraform override
+terraform.rc
+
+
+# Terraform variable files
+*.tfvars
+*.tfvars.json
+
+
+# Override files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+
+# Terraform Artifacts
+.artifacts/
+
+# Terraform plan output
+*.tfplan
+plan.out
+
+# Terraform CLI config
+.terraformrc
+terraform.rc
+
+
+# =========================
+# Sensitive / Secrets
+# =========================
+secrets/
+*.pem
+*.key
+*.crt
+*.pfx
+secrets.yaml
+secrets.yml
+credentials.json
+
+
+# AWS credentials
+.aws/
+
+# Environment files
+.env
+.env.*
+
+# =========================
+# IDE / Editor
+# =========================
+.vscode/
+.idea/
+*.imi
+.classpath
+.settings/
+
+# IntelliJ
+*.iml
+
+# =========================
+# OS Files
+# =========================
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# =========================
+# Documentation
+# =========================
+PROJECT_SETUP.md 
+build/
+docs/generated
+
+
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class 
+*.so 
+.Python
+env/
+venv/
+ENV/
+
+
+*.pyc
+venv/
+.venv/
+
+# =========================
+# NodeJS
+# =========================
+node_modules/
+
+
+
+# =========================
+# Testing / Temp
+# =========================
+tmp/
+temp/
+*.tmp
+
+# =========================
+# Kubernetes
+# =========================
+kubeconfig
+*.kubeconfig
+
+# =========================
+# Ansible
+# =========================
+*.retry
+
+# =========================
+# Docker
+# =========================
+docker-compose.override.yml
+
+
+# Mac/Linux
+*.bak
+
+
+# Helm
+charts/*.tgz
+
+# Kubernetes secrets
+*.secret.yaml
