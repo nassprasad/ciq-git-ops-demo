@@ -7,11 +7,13 @@ locals {
   my_ip = chomp(data.http.my_ip.response_body) # # Remove newline
 }
 
+/*
 # 🔐 Create Key Pair (ROOT responsibility)
 resource "aws_key_pair" "main" {
   key_name   = "dev-key"
   public_key = file("~/.ssh/id_rsa.pub") # # Your local public key
 }
+*/
 
 # 🌐 VPC Module
 module "vpc" {
