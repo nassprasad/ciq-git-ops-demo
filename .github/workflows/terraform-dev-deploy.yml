@@ -51,9 +51,9 @@ jobs:
 
       # Terraform Plan
       - name: Terraform Plan
-        run: terraform plan
+        run: terraform plan -input=false -lock-timeout=10m -no-color
 
       # Terraform Apply
       - name: Terraform Apply
-        run: terraform apply 
+        run: terraform apply  --auto-approve
 
