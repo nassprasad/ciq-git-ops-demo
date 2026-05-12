@@ -20,7 +20,9 @@ jobs:
     defaults:
       run:
         working-directory: environments/dev
-
+    env:
+      TF_IN_AUTOMATION: true
+      
     steps:
 
       - name: Checkout Code
@@ -45,7 +47,7 @@ jobs:
 
       # Terraform Format Check
       - name: Terraform Format
-        run: terraform fmt -check
+        run: terraform fmt -check -recursive
 
       # Terraform Validate
       - name: Terraform Validate
@@ -53,9 +55,8 @@ jobs:
 
       # Terraform Plan
       - name: Terraform Plan
-        run: terraform plan -input=false -lock-timeout=10m -no-color
+        run: terraform plan -input=false -lock-timeout=10m -no-color -var-file="dev.tfvars"
 
       # Terraform Apply
       - name: Terraform Apply
-        run: terraform apply  --auto-approve
-
+        run: terraform apply -input=false -lock-timeout=10m -no-color -var-file="dev.tfvars" -auto-approve
