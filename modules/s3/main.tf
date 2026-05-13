@@ -37,12 +37,17 @@ resource "aws_s3_bucket_ownership_controls" "this" {
   }
 }
 
+
+
+/*
 # Optional Bucket Policy
 resource "aws_s3_bucket_policy" "this" {
   count  = var.bucket_policy != null ? 1 : 0
   bucket = aws_s3_bucket.this.id
   policy = var.bucket_policy
 }
+*/
+
 
 resource "aws_s3_bucket_public_access_block" "this" {
   count  = var.enable_public_access_block ? 1 : 0
@@ -52,4 +57,11 @@ resource "aws_s3_bucket_public_access_block" "this" {
   block_public_policy     = true
   ignore_public_acls      = true
   restrict_public_buckets = true
+}
+
+resource "aws_s3_bucket_policy" "this" {
+  count = var.manage_bucket_policy && var.bucket_policy != null ? 1 : 0
+
+  bucket = aws_s3_bucket.this.id
+  policy = var.bucket_policy
 }

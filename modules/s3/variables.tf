@@ -32,3 +32,8 @@ variable "enable_public_access_block" {
   type        = bool
   default     = true
 }
+
+variable "manage_bucket_policy" {
+  type    = bool
+  default = false
+}
