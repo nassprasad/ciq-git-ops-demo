@@ -61,10 +61,10 @@ module "ec2_web" {
 module "backend_bucket" {
   source = "../../modules/s3"
 
-  bucket_name       = "demo-infra-backend-mumbai"
-  enable_versioning = true
-  enable_encryption = true
-  enable_public_access_block  = true
+  bucket_name                = "demo-infra-backend-mumbai"
+  enable_versioning          = true
+  enable_encryption          = true
+  enable_public_access_block = true
 
   tags = {
     Environment = "dev"
