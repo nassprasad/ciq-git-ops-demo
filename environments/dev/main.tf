@@ -76,31 +76,13 @@ module "backend_bucket" {
 module "sysops_bucket" {
   source = "../../modules/s3"
 
-  bucket_name       = "sysops.in"
-  enable_versioning = false
-  enable_encryption = true
+  bucket_name                = "sysops.in"
+  enable_encryption          = true
+  enable_public_access_block = false
 
-  bucket_policy = jsonencode({
-    Version = "2012-10-17"
-    Statement = [
-      {
-        Sid    = "PublicReadGetObject"
-        Effect = "Allow"
-
-        Principal = "*"
-
-        Action = [
-          "s3:GetObject"
-        ]
-
-        Resource = [
-          "arn:aws:s3:::sysops.in/*"
-        ]
-      }
-    ]
-  })
   tags = {
     Environment = "dev"
     ManagedBy   = "terraform"
   }
 }
+
