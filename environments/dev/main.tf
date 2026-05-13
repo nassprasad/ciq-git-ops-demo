@@ -99,7 +99,6 @@ module "sysops_bucket" {
       }
     ]
   })
-
   tags = {
     Environment = "dev"
     ManagedBy   = "terraform"
