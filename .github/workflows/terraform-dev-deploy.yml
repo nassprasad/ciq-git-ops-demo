@@ -47,6 +47,9 @@ jobs:
 
       # Terraform Format Check
       - name: Terraform Format
+        run: terraform fmt -recursive
+      
+      - name: Terrafrom Format Verify
         run: terraform fmt -check -recursive
 
       # Terraform Validate
