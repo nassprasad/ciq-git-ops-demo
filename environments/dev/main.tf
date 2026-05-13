@@ -57,3 +57,51 @@ module "ec2_web" {
   my_ip    = local.my_ip
 }
 */
+
+module "backend_bucket" {
+  source = "../../modules/s3"
+
+  bucket_name       = "demo-infra-backend-mumbai"
+  enable_versioning = true
+  enable_encryption = true
+  enable_public_access_block  = true
+
+  tags = {
+    Environment = "dev"
+    ManagedBy   = "terraform"
+    Project     = "git-ops-demo"
+  }
+}
+
+module "sysops_bucket" {
+  source = "../../modules/s3"
+
+  bucket_name       = "sysops.in"
+  enable_versioning = false
+  enable_encryption = true
+
+  bucket_policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Sid    = "PublicReadGetObject"
+        Effect = "Allow"
+
+        Principal = "*"
+
+        Action = [
+          "s3:GetObject"
+        ]
+
+        Resource = [
+          "arn:aws:s3:::sysops.in/*"
+        ]
+      }
+    ]
+  })
+
+  tags = {
+    Environment = "dev"
+    ManagedBy   = "terraform"
+  }
+}

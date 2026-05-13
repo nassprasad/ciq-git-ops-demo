@@ -17,6 +17,7 @@ terraform.rc
 
 # Terraform variable files
 *.tfvars
+!environments/dev/dev.tfvars
 *.tfvars.json
 
 
