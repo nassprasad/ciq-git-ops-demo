@@ -1,3 +1,4 @@
+/*
 # Get my public IP dynamically
 data "http" "my_ip" {
   url = "https://api.ipify.org"
@@ -6,6 +7,7 @@ data "http" "my_ip" {
 locals {
   my_ip = chomp(data.http.my_ip.response_body) # # Remove newline
 }
+*/
 
 /*
 # 🔐 Create Key Pair (ROOT responsibility)
@@ -58,6 +60,7 @@ module "ec2_web" {
 }
 */
 
+/*
 module "backend_bucket" {
   source = "../../modules/s3"
 
