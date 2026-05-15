@@ -68,12 +68,6 @@ module "backend_bucket" {
   enable_versioning          = true
   enable_encryption          = true
   enable_public_access_block = true
-
-  tags = {
-    Environment = "dev"
-    ManagedBy   = "terraform"
-    Project     = "git-ops-demo"
-  }
 }
 
 module "sysops_bucket" {
@@ -83,9 +77,6 @@ module "sysops_bucket" {
   enable_encryption          = true
   enable_public_access_block = false
 
-  tags = {
-    Environment = "dev"
-    ManagedBy   = "terraform"
-  }
+
 }
 */
