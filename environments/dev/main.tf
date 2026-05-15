@@ -69,14 +69,4 @@ module "backend_bucket" {
   enable_encryption          = true
   enable_public_access_block = true
 }
-
-module "sysops_bucket" {
-  source = "../../modules/s3"
-
-  bucket_name                = "sysops.in"
-  enable_encryption          = true
-  enable_public_access_block = false
-
-
-}
 */
