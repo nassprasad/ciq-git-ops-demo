@@ -9,12 +9,6 @@ variable "azs" {
   type = list(string)
 }
 
-/*
-variable "ami_id" { type = string }
-variable "instance_type" { type = string }
-variable "instance_name" { type = string }
-*/
-
 
 variable "tags" {
   type = map(string)
@@ -25,3 +19,10 @@ variable "tags" {
     Project     = "git-ops-demo"
   }
 }
+
+
+/*
+variable "ami_id" { type = string }
+variable "instance_type" { type = string }
+variable "instance_name" { type = string }
+*/
