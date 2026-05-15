@@ -14,3 +14,14 @@ variable "ami_id" { type = string }
 variable "instance_type" { type = string }
 variable "instance_name" { type = string }
 */
+
+
+variable "tags" {
+  type = map(string)
+
+  default = {
+    Environment = "dev"
+    ManagedBy   = "terraform"
+    Project     = "git-ops-demo"
+  }
+}
