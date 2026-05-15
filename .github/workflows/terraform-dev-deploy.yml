@@ -58,8 +58,10 @@ jobs:
 
       # Terraform Plan
       - name: Terraform Plan
-        run: terraform plan -input=false -lock-timeout=10m -no-color -var-file="dev.tfvars"
+        run: terraform plan -input=false -lock-timeout=5m -no-color -var-file="dev.tfvars"
 
       # Terraform Apply
       - name: Terraform Apply
         run: terraform apply -input=false -lock-timeout=10m -no-color -var-file="dev.tfvars" -auto-approve
+
+    

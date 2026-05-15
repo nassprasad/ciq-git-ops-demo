@@ -1,3 +1,4 @@
+/*
 resource "aws_s3_bucket" "this" {
   bucket = var.bucket_name
 
@@ -39,14 +40,6 @@ resource "aws_s3_bucket_ownership_controls" "this" {
 
 
 
-/*
-# Optional Bucket Policy
-resource "aws_s3_bucket_policy" "this" {
-  count  = var.bucket_policy != null ? 1 : 0
-  bucket = aws_s3_bucket.this.id
-  policy = var.bucket_policy
-}
-*/
 
 
 resource "aws_s3_bucket_public_access_block" "this" {
@@ -65,3 +58,4 @@ resource "aws_s3_bucket_policy" "this" {
   bucket = aws_s3_bucket.this.id
   policy = var.bucket_policy
 }
+*/
